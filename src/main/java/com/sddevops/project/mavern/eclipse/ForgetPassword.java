@@ -12,6 +12,7 @@ public class ForgetPassword extends App {
 	    numbers.add("Five");
 	    numbers.add("Six");
 	    numbers.add("Seven");
+	    number.add("Nine");
 	    System.out.println(numbers);
 	  } 
 }
