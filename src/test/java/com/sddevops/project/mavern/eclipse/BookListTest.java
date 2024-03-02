@@ -2,12 +2,15 @@ package com.sddevops.project.mavern.eclipse;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.sddevops.project.junit.maven.eclipse.Song;
 
 public class BookListTest {
 	private BookList Bl;
@@ -42,26 +45,19 @@ public class BookListTest {
 		//fail("Not yet implemented");
 		assertEquals(3, Bl.size());
 	}
-	
 	@Test
-	public void testFindBooksByTitle() {
+	void testFindBookByTitle() {
 		//fail("Not yet implemented");
-		List<Book> testBl=Bl.get();
-		assertEquals(testBl.(),Number_Of_Books);
-	}
-	
-	@Test
-	public void testGetBooksByAuthor() {
-		//fail("Not yet implemented");
-		List<Book> testBl=Bl.getBooks();
-		assertEquals(testBl.size(),Number_Of_Books);
-	}
-	
-	@Test
-	public void testSortBooksByTitle() {
-		//fail("Not yet implemented");
-		List<Book> testBl=Bl.getBooks();
-		assertEquals(testBl.size(),Number_Of_Books);
+		//Arrange
+		B4 = new book("006","Swipe","Gaga",3.00);
+		Bl.addbook(B4);
+		//Act
+		Book bookFound = Bl.findBookByTitle("Julia's Dream");
+		Book bookNotFound = Bl.findBookByTitle("None");
+		//Assert
+		assertEquals("Julia's Dream", bookFound.getTitle());
+		assertNull(bookNotFound);
+		
 	}
 
 }
