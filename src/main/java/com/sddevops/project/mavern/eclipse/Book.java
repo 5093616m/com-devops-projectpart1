@@ -1,7 +1,5 @@
 package com.sddevops.project.mavern.eclipse;
 
-import java.util.Objects;
-
 public class Book {
 	private String title;
 	private String author;
@@ -11,7 +9,7 @@ public class Book {
 	 * @param title
 	 * @param author
 	 */
-	public Book(String title, String author, String edition, double quantity) {
+	public Book(String title, String author,) {
 		super();
 		this.title = title;
 		this.author = author;
