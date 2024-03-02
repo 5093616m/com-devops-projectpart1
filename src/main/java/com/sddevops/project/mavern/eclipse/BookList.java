@@ -2,26 +2,16 @@ package com.sddevops.project.mavern.eclipse;
 
 import java.util.*;
 
+import com.sddevops.project.junit.maven.eclipse.Song;
+
 public class BookList {
 
     private ArrayList<Book> books = new ArrayList<>();
     private int capacity;
 
     public BookList() {
-    	/*books.add(new Book("Singapore Story","Lim KY","4th Edition",5));
-    	books.add(new Book("Travel Travel","G GetGoer","8th Edition",3));
-    	books.add(new Book("Henry Potty","J K Hogger","5th Edition",4));
-    	books.add(new Book("Julia's Dream","Sally Soon","2nd Edition",2));*/
 
         this.capacity = 10;
-    }
-
-    public BookList(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public List<Book> getBooks() {
-        return books;
     }
 
     public void addBook(Book book) {
@@ -30,13 +20,17 @@ public class BookList {
     	}
     }
     
-    public ArrayList<Book> sortBooksByTitle() {         
-        Collections.sort(books, Book.titleComparator);         
-        return books;     
-    } 
+    public Book findBookByTitle(String title) {
+    	for (Book A : books) { 		      
+            if(A.getTitle().equals(title)) return A;
+       }
+    	return null;
+    }
     
-    public ArrayList<Book> sortBooksByAuthor() {         
-        Collections.sort(books, Book.authorComparator);         
-        return books;     
-    } 
+    public Book findBookByAuthor(String author) {
+    	for (Book A : books) { 		      
+            if(A.getAuthor().equals(author)) return A;
+       }
+    	return null;
+    }
 }
