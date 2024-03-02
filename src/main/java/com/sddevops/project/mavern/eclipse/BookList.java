@@ -34,4 +34,9 @@ public class BookList {
         Collections.sort(books, Book.titleComparator);         
         return books;     
     } 
+    
+    public ArrayList<Book> sortBooksByAuthor() {         
+        Collections.sort(books, Book.authorComparator);         
+        return books;     
+    } 
 }

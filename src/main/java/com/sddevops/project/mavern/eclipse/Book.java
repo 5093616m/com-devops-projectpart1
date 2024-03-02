@@ -7,7 +7,7 @@ public class Book {
 	private String title;
 	private String author;
 	private String edition;
-	private double quantity;;
+	private double quantity;
 
 	/**
 	 * @param title
