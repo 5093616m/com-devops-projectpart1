@@ -1,16 +1,12 @@
 package com.sddevops.project.mavern.eclipse;
 
-import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.List;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-public class BookListTest {
+class BookListTest {
 	private BookList BL;
 	private Book B1;
 	private Book B2;
@@ -18,38 +14,40 @@ public class BookListTest {
 	private Book B4;
 	private Book B5;
 	private final int Number_Of_Books=5;
-			
+
+	@BeforeEach
+	void setUp() throws Exception {
+		BL = new BookList();
+		B1 = new Book("Singapore Story","Lim KY","4th Edition",5);
+		B2 = new Book("Travel Travel","G GetGoer","8th Edition",3);
+		B3 = new Book("Henry Docker","J K Hogger","5th Edition",4);
+		B4 = new Book("Julia's Dream","Sally Soon","2nd Edition",2);
+		B5 = new Book("Code With Life","Steve Atkins","4th Edition",3);
+	}
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	
-	@Before
-	public void setUp() throws Exception {
-		BL = new BookList();
-		B1 = new Book("Singapore Story","Lim KY","4th Edition",5);
-		B2 = new Book("Travel Travel","G GetGoer","8th Edition",3);
-		B3 = new Book("Henry Potty","J K Hogger","5th Edition",4);
-		B4 = new Book("Julia's Dream","Sally Soon","2nd Edition",2);
-		B5 = new Book("Code For Life","Steve Atkins","4th Edition",3);
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-
-	@After
-	public void tearDown() throws Exception {
+	@AfterEach
+	void tearDown() throws Exception {
 		BL=null;
 	}
 
 	@Test
-	public void testSize() {
+	void testBookList() {
 		//fail("Not yet implemented");
 		assertEquals(5, Number_Of_Books);
 	}
-	
+
 	@Test
-	public void testFindBookByTitle() {
+	void testAddBook() {
+		//fail("Not yet implemented");
+		assertEquals(8, Number_Of_Books+3);
+	}
+
+	@Test
+	void testFindBookByTitle() {
 		//fail("Not yet implemented");
 		//Arrange
 		BL.addBook(B4);
@@ -59,11 +57,10 @@ public class BookListTest {
 		//Assert
 		assertEquals("Julia's Dream", bookFound.getTitle());
 		assertNull(bookNotFound);
-		
 	}
-	
+
 	@Test
-	public void testFindBookByAuthor() {
+	void testFindBookByAuthor() {
 		//fail("Not yet implemented");
 		//Arrange
 		BL.addBook(B5);
@@ -73,7 +70,6 @@ public class BookListTest {
 		//Assert
 		assertEquals("Steve Atkins", bookFound.getAuthor());
 		assertNull(bookNotFound);
-		
 	}
 
 }
