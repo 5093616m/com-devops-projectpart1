@@ -22,7 +22,7 @@ class BookListTest {
 		B2 = new Book("Travel Travel","G GetGoer","8th Edition",3);
 		B3 = new Book("Henry Docker","J K Hogger","5th Edition",4);
 		B4 = new Book("Julia's Dream","Sally Soon","2nd Edition",2);
-		B5 = new Book("Code For Life","Steve Atkins","4th Edition",3);
+		B5 = new Book("Code With Life","Steve Atkins","4th Edition",3);
 	}
 	
 	/**
