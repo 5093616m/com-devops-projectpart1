@@ -14,6 +14,7 @@ public class BookListTest {
 	private Book B1;
 	private Book B2;
 	private Book B3;
+	private final int Number_Of_Books=3;
 			
 	/**
 	 * @throws java.lang.Exception
