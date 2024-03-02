@@ -9,7 +9,7 @@ public class Book {
 	 * @param title
 	 * @param author
 	 */
-	public Book(String title, String author) {
+	public Book(String title, String author, String edition, double quantity) {
 		super();
 		this.title = title;
 		this.author = author;
